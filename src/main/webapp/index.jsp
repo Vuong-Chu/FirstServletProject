@@ -18,10 +18,10 @@
         <label for="Add">Add</label><br>
         <input type="radio" id="Subtract" name="sign" value="Subtract">
         <label for="Subtract">Subtract</label><br>
-        <input type="radio" id="Divide" name="sign" value="Divide">
-        <label for="Divide">Divide</label><br>
         <input type="radio" id="Multiply" name="sign" value="Multiply">
         <label for="Multiply">Multiply</label><br>
+        <input type="radio" id="Divide" name="sign" value="Divide">
+        <label for="Divide">Divide</label><br>
         <input type="Submit" value="Submit">
     </form>
 </h1>
