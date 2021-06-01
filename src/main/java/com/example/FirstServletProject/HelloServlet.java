@@ -16,25 +16,8 @@ public class HelloServlet extends HttpServlet {
         int num1 = Integer.parseInt(request.getParameter("num1"));
         int num2 = Integer.parseInt(request.getParameter("num2"));
         String calculation = request.getParameter("sign");
-        System.out.println(calculation);
-        String result;
-        switch (calculation){
-            case "Add":
-                result = String.format("%d",num1+num2);
-                break;
-            case "Subtract":
-                result = String.format("%d",num1+num2);
-                break;
-            case "Multiply":
-                result = String.format("%d",num1+num2);
-                break;
-            default:
-                if(num2==0){
-                    result = "Invalid numbers";
-                }else {
-                    result = String.format("%.2f",num1*1.0/num2);
-                }
-        }
+        String result = resultHelper(num1, num2, calculation);
+
         response.setContentType("text/html");
         // Hello
         PrintWriter out = response.getWriter();
@@ -44,6 +27,25 @@ public class HelloServlet extends HttpServlet {
         out.println("</body></html>");
     }
 
-    public void destroy() {
+    private String resultHelper(int num1, int num2, String calculation){
+        String result;
+        switch (calculation){
+            case "Add":
+                result = String.format("%d",num1+num2);
+                break;
+            case "Subtract":
+                result = String.format("%d",num1+num2);
+                break;
+            case "Multiply":
+                result = String.format("%d",num1*num2);
+                break;
+            default:
+                if(num2==0){
+                    result = "Invalid numbers";
+                }else {
+                    result = String.format("%.2f",num1*1.0/num2);
+                }
+        }
+        return result;
     }
 }
